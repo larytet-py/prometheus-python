@@ -7,13 +7,13 @@ Given a structure
 
 ```Python
 class Statistics:
-	@prometheus 1s tick implemented in the code
+	@prometheus("1s tick implemented in the code")
 	ticker = 0
-	@prometheus Count of hits of the HTTP server, includes debug interfaces
+	@prometheus("Count of hits of the HTTP server, includes debug interfaces")
 	hits = 0  
-	@prometheus Count of the API calls
+	@prometheus("Count of the API calls")
 	hitApi = 0
-	@prometheus Number of 5xx errors returned by the API
+	@prometheus("Number of 5xx errors returned by the API")
 	status5xx = 0
 }
 ```
