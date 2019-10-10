@@ -6,16 +6,19 @@ This package is similar to https://github.com/larytet-go/prometheus-golang
 Given a structure 
 
 ```Python
-class Statistics {
-  def __init__(self):
-	  self.ticker = 0
-	  self.hits = 0  
-	  self.hitApi = 0
-	  self.status5xx = 0
+class Statistics:
+	@prometheus 1s tick implemented in the code
+	ticker = 0
+	@prometheus Count of hits of the HTTP server, includes debug interfaces
+	hits = 0  
+	@prometheus Count of the API calls
+	hitApi = 0
+	@prometheus Number of 5xx errors returned by the API
+	status5xx = 0
 }
 ```
 
-Call to PrometheusStructure() returns
+Call to prometheus_structure() returns
 
 	HELP ticker 1s tick implemented in the code
 	TYPE ticker counter
